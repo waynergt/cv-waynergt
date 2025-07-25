@@ -3,7 +3,22 @@ import './PersonalInfo.css';
 import profilePic from '../assets/profile.jpg';
 
 const PersonalInfo = () => (
-  <section className="personal-info-section">
+  <section className="personal-info-section flash-bg">
+    {/* Fondo animado de rayos */}
+    <div className="flash-animated-bg">
+      <svg className="flash-lightning lightning1" width="120" height="220" viewBox="0 0 120 220" fill="none">
+        <polygon points="60,10 50,70 70,70 55,130 105,60 75,60 90,10" fill="#FFD600" opacity="0.78">
+          <animate attributeName="opacity" values="0.65;1;0.65" dur="2.8s" repeatCount="indefinite"/>
+        </polygon>
+      </svg>
+      <svg className="flash-lightning lightning2" width="110" height="180" viewBox="0 0 110 180" fill="none">
+        <polygon points="55,20 45,70 65,70 50,120 95,60 65,60 80,20" fill="#006effff" opacity="0.55">
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="3.5s" repeatCount="indefinite"/>
+        </polygon>
+      </svg>
+      <div className="flash-bg-glow"></div>
+    </div>
+    {/* -------------------------- */}
     <div className="info-card info-card-large info-card-centered">
       <div className="info-photo info-photo-centered">
         <div className="info-photo-glow">
@@ -21,14 +36,15 @@ const PersonalInfo = () => (
           </svg>
           ¡Bienvenido(a)!
         </span>
-        <h1 className="info-title large">Wayner Alberto<br />López López</h1>
+        <h1 className="info-title large">Wayner Alberto<br />López y López</h1>
         <h2 className="info-role">
           <svg width="28" height="28" fill="#1ce1d7" style={{ verticalAlign: 'middle', marginRight: 10 }} viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zm10 7.25l-10 5-10-5V17l10 5 10-5V9.25z"/></svg>
           Desarrollador Junior
         </h2>
         <p className="info-desc">
-          Estudiante de Ingeniería en Sistemas con experiencia en desarrollo web y gestión empresarial.<br />
-          Especializado en <span className="tech csharp">C#</span>, <span className="tech dotnet">.NET</span> y <span className="tech js">JavaScript</span>.
+          Soy un estudiante de Ingeniería en Sistemas, motivado por el constante avance de la tecnología y la transformación digital en las organizaciones. Además, cuento con conocimientos en gestión empresarial, lo que me permite comprender la importancia de alinear soluciones tecnológicas con los objetivos estratégicos de las empresas. Mi enfoque combina la creatividad en la programación con una visión analítica para resolver desafíos y aportar valor en entornos colaborativos y dinámicos. Especializado en<br />
+           
+          <span className="tech csharp">C#</span>, <span className="tech dotnet">.NET</span> y <span className="tech js">JavaScript</span>.
         </p>
         <div className="info-contact">
           <span>
@@ -41,10 +57,10 @@ const PersonalInfo = () => (
           </span>
         </div>
         <div className="info-social">
-          <a href="https://linkedin.com/in/marvin708" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://linkedin.com/in/wayner-alberto-lopez-y-lopez-099632353/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><rect width="50" height="50" rx="12" fill="#0A66C2"/><path d="M15.625 19.375h5V35H15.625V19.375zM18.125 15.625a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM21.25 24.375H25v2.188c.625-1.25 2.187-2.5 4.063-2.5 3.437 0 4.062 2.188 4.062 5V35h-5v-7.5c0-1.25 0-2.5-1.25-2.5s-1.25 1.25-1.25 2.5V35h-5V24.375z" fill="#fff"/></svg>
           </a>
-          <a href="https://facebook.com/albertolopezgt" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <a href="https://facebook.com/waynerlopezgt" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
             <svg width="36" height="36" viewBox="0 0 50 50" fill="none"><rect width="50" height="50" rx="12" fill="#1877F3"/><path d="M28.5 35V25h3.125l.469-3.625H28.5v-2.438c0-1.063.188-1.562 1.219-1.562h2.031V14.25A25.9 25.9 0 0 0 28.75 14c-2.563 0-4.25 1.562-4.25 4.438V21.5h-2.75V25h2.75v10h4z" fill="#fff"/></svg>
           </a>
           <a href="https://github.com/waynergt" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

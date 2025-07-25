@@ -1,4 +1,5 @@
 .personal-info-section {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -6,9 +7,75 @@
   background: radial-gradient(ellipse 90% 90% at 50% 30%, #15203b 0%, #1a2341 90%);
   box-sizing: border-box;
   padding: 4vw 0;
+  overflow: hidden;
+  z-index: 1;
 }
 
+.flash-animated-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.flash-lightning {
+  position: absolute;
+  z-index: 1;
+  filter: drop-shadow(0 0 23px #FFD60088) blur(0.5px);
+  opacity: 0.7;
+  animation: flashlight-move 4.5s linear infinite alternate;
+}
+
+.lightning1 {
+  top: 10%;
+  left: 7vw;
+  transform: rotate(-6deg) scale(1.2);
+  animation-delay: 0s;
+}
+.lightning2 {
+  bottom: 12%;
+  right: 8vw;
+  transform: rotate(12deg) scale(0.95);
+  animation-delay: 1.2s;
+}
+
+@keyframes flashlight-move {
+  0% { filter: drop-shadow(0 0 16px #FFD60088) brightness(1.12); }
+  40% { filter: drop-shadow(0 0 38px #FFC107cc) brightness(1.20); }
+  60% { filter: drop-shadow(0 0 33px #00c6ffcc) brightness(1.12); }
+  100% { filter: drop-shadow(0 0 16px #FFD60088) brightness(1.08);}
+}
+
+.flash-bg-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60vw;
+  height: 60vw;
+  min-width: 400px;
+  min-height: 400px;
+  max-width: 950px;
+  max-height: 950px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #ffd60022 0%, #00c6ff11 50%, transparent 95%);
+  z-index: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0.95;
+  animation: bg-pulse 2.8s infinite alternate;
+}
+@keyframes bg-pulse {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+/* Tarjeta y contenido */
 .info-card {
+  position: relative;
+  z-index: 2;
   background: linear-gradient(120deg, #18294e 60%, #0a2540 100%);
   border-radius: 2.5rem;
   display: flex;
@@ -58,7 +125,7 @@
 .info-photo-glow {
   position: relative;
   border-radius: 50%;
-  background: radial-gradient(circle, #00c6ff 60%, #FFD600 100%);
+  background: radial-gradient(circle, #00ff80 60%, #FFD600 100%);
   padding: 13px;
   box-shadow: 0 0 55px #00c6ff88, 0 0 32px #FFD60055;
   display: flex;
@@ -97,7 +164,7 @@
 }
 
 .info-role {
-  color: #1ce1d7;
+  color: #1ce15e;
   font-size: 1.7rem;
   font-weight: 700;
   display: flex;
@@ -199,5 +266,13 @@
     height: 80vw;
     max-width: 120px;
     max-height: 120px;
+  }
+  .flash-bg-glow {
+    width: 90vw;
+    height: 90vw;
+    min-width: 180px;
+    min-height: 180px;
+    max-width: 400px;
+    max-height: 400px;
   }
 }
