@@ -34,7 +34,7 @@ const Navbar: React.FC = () => {
               </filter>
             </defs>
           </svg>
-          <span className="logo-text">Wayner GT</span>
+          <span className="logo-text">Wayner López</span>
         </a>
         {/* Botón hamburguesa solo en móvil */}
         <button
