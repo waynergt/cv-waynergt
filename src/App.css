@@ -36,3 +36,132 @@
     transform: rotate(360deg);
   }
 }
+/* Fondo animado de rayos y flash */
+.lightning-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background: linear-gradient(120deg, #1a1a2e 60%, #16213e 100%);
+  overflow: hidden;
+}
+
+/* Icono de flash centrado, con resplandor */
+.flash-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  animation: flashPulse 2s infinite alternate;
+}
+
+@keyframes flashPulse {
+  0% { filter: drop-shadow(0 0 20px yellow); }
+  100% { filter: drop-shadow(0 0 40px orange); }
+}
+
+/* Rayos animados usando pseudo-elementos */
+.lightning-animated {
+  position: absolute;
+  left: 10vw;
+  top: 10vh;
+  width: 80vw;
+  height: 80vh;
+  pointer-events: none;
+}
+
+.lightning-animated::before, .lightning-animated::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 300px;
+  left: 30vw;
+  top: 10vh;
+  background: linear-gradient(180deg, #fff700 30%, #ff7a00 90%);
+  opacity: 0.6;
+  animation: lightningMove 1.2s infinite alternate;
+  border-radius: 1px;
+  box-shadow: 0 0 60px 10px #ffd700;
+}
+
+.lightning-animated::after {
+  left: 60vw;
+  height: 200px;
+  animation-delay: .6s;
+}
+
+@keyframes lightningMove {
+  0% { opacity: 0.3; transform: scaleY(1) rotate(-5deg); }
+  70% { opacity: 1; transform: scaleY(1.07) rotate(4deg); }
+  100% { opacity: 0.2; transform: scaleY(0.92) rotate(-3deg); }
+}
+body {
+  background: transparent;
+}
+.lightning-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  background: linear-gradient(120deg, #1a1a2e 60%, #16213e 100%);
+  overflow: hidden;
+}
+.flash-icon {
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  animation: flashPulse 2s infinite alternate;
+}
+@keyframes flashPulse {
+  0% { filter: drop-shadow(0 0 20px yellow); }
+  100% { filter: drop-shadow(0 0 40px orange); }
+}
+.lightning-animated {
+  position: absolute;
+  left: 10vw;
+  top: 10vh;
+  width: 80vw;
+  height: 80vh;
+  pointer-events: none;
+}
+.lightning-animated::before, .lightning-animated::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 300px;
+  left: 30vw;
+  top: 10vh;
+  background: linear-gradient(180deg, #fff700 30%, #ff7a00 90%);
+  opacity: 0.6;
+  animation: lightningMove 1.2s infinite alternate;
+  border-radius: 1px;
+  box-shadow: 0 0 60px 10px #ffd700;
+}
+.lightning-animated::after {
+  left: 60vw;
+  height: 200px;
+  animation-delay: .6s;
+}
+@keyframes lightningMove {
+  0% { opacity: 0.3; transform: scaleY(1) rotate(-5deg); }
+  70% { opacity: 1; transform: scaleY(1.07) rotate(4deg); }
+  100% { opacity: 0.2; transform: scaleY(0.92) rotate(-3deg); }
+}
+.personal-info-card {
+  background: rgba(30,32,60,0.83);
+  border-radius: 2rem;
+  border: none;
+  overflow: hidden;
+}
+.social-icons a {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.social-icons a:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 18px #FFD70099;
+}
+.profile-intro {
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-weight: 500;
+}
